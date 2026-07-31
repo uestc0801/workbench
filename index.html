@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f6fa">
+<title>个人工作台 · 每日可视化</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════ 顶部工具条(手机) ══════════ -->
+<header class="topbar" id="topbar">
+  <div class="brand" id="brandLogo">
+    <svg viewBox="0 0 24 24" class="ic"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>
+    <span>工作台</span>
+  </div>
+  <div class="searchbox" id="topSearch">
+    <svg viewBox="0 0 24 24" class="ic"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.2 4.2"/></svg>
+    <input type="search" id="globalSearchInput" placeholder="搜索待办 · 书籍 · 灵感 · 单词 …" autocomplete="off">
+    <div class="search-pop" id="searchPop"></div>
+  </div>
+  <button class="iconbtn" id="themeBtn" title="切换深浅色">
+    <svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7"/></svg>
+  </button>
+</header>
+
+<!-- ══════════ 左侧固定导航(桌面) ══════════ -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <svg viewBox="0 0 24 24" class="ic"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>
+    <span>个人工作台</span>
+  </div>
+  <nav class="side-nav" id="sideNav"></nav>
+  <div class="side-foot">
+    <button class="navitem" data-route="settings">
+      <svg viewBox="0 0 24 24" class="ic"><circle cx="12" cy="12" r="3.2"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.4 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6a7 7 0 0 0 0 2.4l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.4-2.6a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.2-.8.2-1.2z"/></svg>
+      <span>设置</span>
+    </button>
+    <div class="side-theme">
+      <span>外观</span>
+      <div class="seg" id="themeSeg">
+        <button data-theme="light">浅色</button>
+        <button data-theme="dark">深色</button>
+        <button data-theme="auto">自动</button>
+      </div>
+    </div>
+    <div class="side-date" id="sideDate"></div>
+  </div>
+</aside>
+
+<!-- ══════════ 主内容区 ══════════ -->
+<main class="main" id="main">
+  <section class="page" data-page="overview"></section>
+  <section class="page" data-page="calendar"></section>
+  <section class="page" data-page="todo"></section>
+  <section class="page" data-page="books"></section>
+  <section class="page" data-page="water"></section>
+  <section class="page" data-page="review"></section>
+  <section class="page" data-page="exercise"></section>
+  <section class="page" data-page="inspiration"></section>
+  <section class="page" data-page="english"></section>
+  <section class="page" data-page="settings"></section>
+</main>
+
+<!-- ══════════ 底部标签栏(手机) ══════════ -->
+<nav class="tabbar" id="tabbar"></nav>
+
+<!-- ══════════ 全局浮层 ══════════ -->
+<div class="toast-wrap" id="toastWrap"></div>
+<div class="modal-mask" id="modalMask" hidden>
+  <div class="modal" id="modalBox"></div>
+</div>
+<div class="focus-layer" id="focusLayer" hidden></div>
+<div class="confirm-mask" id="confirmMask" hidden>
+  <div class="confirm" id="confirmBox"></div>
+</div>
+
+<script src="js/core.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/lunar.js"></script>
+<script src="js/modules/overview.js"></script>
+<script src="js/modules/hottopics.js"></script>
+<script src="js/modules/calendar.js"></script>
+<script src="js/modules/todo.js"></script>
+<script src="js/modules/books.js"></script>
+<script src="js/modules/water.js"></script>
+<script src="js/modules/exercise.js"></script>
+<script src="js/modules/review.js"></script>
+<script src="js/modules/inspiration.js"></script>
+<script src="js/modules/english.js"></script>
+<script src="js/modules/settings.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
